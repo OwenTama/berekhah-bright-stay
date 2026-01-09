@@ -1,4 +1,5 @@
-* {
+* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap');
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,22 +7,27 @@
 }
 
 body {
-    background-color: #f5f7fa;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #f8f9fb;
     color: #333;
 }
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+
 
 header {
-    background: linear-gradient(135deg, #1d3557, #457b9d);
+    background: linear-gradient(135deg, #1c1f2a, #3a3f5c);
     color: white;
-    padding: 25px;
-    text-align: center;
+    padding: 20px;
 }
 
 nav a {
-    color: white;
-    margin: 0 15px;
+    color: #f1c40f;
+    font-weight: 600;
     text-decoration: none;
-    font-weight: bold;
 }
 
 nav a:hover {
@@ -75,17 +81,19 @@ nav a:hover {
 }
 
 button {
-    background: #1d3557;
-    color: white;
-    padding: 12px 20px;
+   background: linear-gradient(135deg, #f1c40f, #d4ac0d);
+    color: #1c1f2a;
     border: none;
-    border-radius: 6px;
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 8px;
     cursor: pointer;
 }
 
 button:hover {
-    background: #457b9d;
+    opacity: 0.9;
 }
+
 
 form input, form textarea {
     width: 100%;
@@ -117,3 +125,182 @@ footer {
         transform: translateY(0);
     }
 }
+
+/* ===== IMAGE SLIDER (FIXED – NO BLANK SLIDE) ===== */
+
+.slider {
+    max-width: 1000px;
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.slides {
+    display: flex;
+    width: 300%;
+    animation: slide 12s infinite ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Move by image percentages, NOT pages */
+@keyframes slide {
+    0%   { transform: translateX(0%); }
+    25%  { transform: translateX(0%); }
+
+    33%  { transform: translateX(-33.333%); }
+    58%  { transform: translateX(-33.333%); }
+
+    66%  { transform: translateX(-66.666%); }
+    100% { transform: translateX(-66.666%); }
+}
+
+.fade-in {
+    animation: fadeIn 1.2s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+@media (max-width: 768px) {
+
+    header h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .section {
+        padding: 20px;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .slides img {
+        height: 250px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    iframe {
+        width: 100%;
+        height: 250px;
+    }
+}
+
+/* ===== ROOM IMAGE GALLERY ===== */
+.room-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.room-gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* ===== FULL SCREEN HERO SLIDER ===== */
+
+.hero-slider {
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.hero-slide {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+    opacity: 0;
+    animation: heroFade 2s ease-in forwards;
+}
+
+@keyframes heroFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+}
+
+.hero-slides {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    animation: heroSlide 24s infinite ease-in-out;
+}
+
+@keyframes heroSlide {
+    0%   { transform: translateX(0%); }
+    30%  { transform: translateX(0%); }
+
+    33%  { transform: translateX(-33.333%); }
+    63%  { transform: translateX(-33.333%); }
+
+    66%  { transform: translateX(-66.666%); }
+    100% { transform: translateX(-66.666%); }
+}
+
+
+
+
+
