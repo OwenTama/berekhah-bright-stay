@@ -1,0 +1,115 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', sans-serif;
+}
+
+
+body {
+background-color: #f5f7fa;
+color: #333;
+}
+
+
+header {
+background: linear-gradient(135deg, #1d3557, #457b9d);
+color: white;
+padding: 25px;
+text-align: center;
+}
+
+nav a {
+color: white;
+margin: 0 15px;
+text-decoration: none;
+font-weight: bold;
+}
+
+
+nav a:hover {
+text-decoration: underline;
+}
+
+
+.hero {
+padding: 60px 20px;
+text-align: center;
+}
+
+.hero h1 {
+font-size: 40px;
+margin-bottom: 15px;
+}
+
+
+.hero p {
+font-size: 18px;
+max-width: 700px;
+margin: auto;
+}
+
+
+.gallery {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 15px;
+padding: 40px;
+}
+
+.gallery img {
+width: 100%;
+border-radius: 12px;
+}
+
+
+.section {
+padding: 50px 20px;
+max-width: 1000px;
+margin: auto;
+}
+
+
+.card {
+background: white;
+padding: 25px;
+margin-bottom: 25px;
+border-radius: 12px;
+box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+color: #1d3557;
+}
+
+
+button {
+background: #1d3557;
+color: white;
+padding: 12px 20px;
+border: none;
+border-radius: 6px;
+cursor: pointer;
+}
+
+
+button:hover {
+background: #457b9d;
+}
+
+form input, form textarea {
+width: 100%;
+padding: 12px;
+margin: 10px 0;
+border-radius: 6px;
+border: 1px solid #ccc;
+}
+
+
+footer {
+background: #1d3557;
+color: white;
+text-align: center;
+padding: 15px;
+margin-top: 40px;
+}
